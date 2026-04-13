@@ -1,5 +1,6 @@
 import { useNotes } from '../../context/NoteContext.jsx';
 import { ViewToggle } from '../ui/ViewToggle.jsx';
+import { formatDate } from '../../utils/formatDate.js';
 
 const VIEWS = [
   {
@@ -81,6 +82,9 @@ export function NoteGrid({ view, onViewChange }) {
                   <p className="text-xs text-gray-400 leading-relaxed line-clamp-4 flex-1">
                     {note.body || <span className="italic text-gray-600">Empty note</span>}
                   </p>
+
+                  {/* Created date */}
+                  <p className="text-xs text-gray-500 mt-2 shrink-0">{formatDate(note.createdAt)}</p>
 
                   {/* Delete — revealed on hover */}
                   <button

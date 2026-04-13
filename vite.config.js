@@ -9,6 +9,9 @@ export default defineConfig({
   // index.html lives at project root so Vite finds it automatically.
   // The public/ dir is used for static assets copied verbatim (e.g. icon.ico).
   publicDir: 'public',
+  // './' makes asset URLs relative so they resolve correctly under
+  // the file:// protocol that Electron uses when loading the packaged app.
+  base: './',
   build: {
     outDir: 'dist/renderer',
     emptyOutDir: true,

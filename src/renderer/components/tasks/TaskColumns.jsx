@@ -39,7 +39,7 @@ export function TaskColumns() {
                 <p className="text-xs text-gray-600 text-center py-4 italic">Empty</p>
               ) : (
                 columnTasks.map((task) => (
-                  <TaskItem key={task.id} task={task} />
+                  <TaskItem key={task.id} task={task} compact />
                 ))
               )}
             </div>

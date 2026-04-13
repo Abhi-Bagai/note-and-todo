@@ -1,5 +1,6 @@
 import { useNotes } from '../../context/NoteContext.jsx';
 import { ViewToggle } from '../ui/ViewToggle.jsx';
+import { formatDate } from '../../utils/formatDate.js';
 
 const VIEWS = [
   {
@@ -70,7 +71,10 @@ export function NoteList({ view, onViewChange }) {
                     : 'text-gray-300 hover:bg-gray-800'}`}
                 onClick={() => setSelectedNoteId(note.id)}
               >
-                <span className="flex-1 truncate">{note.title || 'Untitled'}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="truncate">{note.title || 'Untitled'}</p>
+                  <p className="text-xs text-gray-500 truncate">{formatDate(note.createdAt)}</p>
+                </div>
                 <button
                   onClick={(e) => { e.stopPropagation(); deleteNote(note.id); }}
                   className="opacity-0 group-hover:opacity-100 text-gray-500 hover:text-red-400

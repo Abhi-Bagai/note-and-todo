@@ -8,13 +8,14 @@ import { registerNoteHandlers } from './ipc/noteHandlers.js';
 // ESM doesn't have __dirname — reconstruct it from import.meta.url.
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// In dev, Vite runs a hot-reload server. In prod, we serve the built bundle.
-const isDev = process.env.NODE_ENV !== 'production';
-
 // Preload path computed once at startup.
 const preloadPath = path.join(__dirname, '../preload.cjs');
 
 function createWindow() {
+  // Evaluated inside createWindow (post whenReady) so app.isPackaged is
+  // guaranteed to be set. At module load time it can be unreliable.
+  const isDev = !app.isPackaged;
+
   const win = new BrowserWindow({
     width: 1200,
     height: 800,

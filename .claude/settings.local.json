@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(node -e \"require\\('./src/main/main.js'\\)\")",
+      "Bash(node node_modules/electron/install.js)",
+      "Bash(npm start:*)",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(npm run:*)",
+      "Bash(CSC_IDENTITY_AUTO_DISCOVERY=false NODE_ENV=production npm run build)",
+      "Read(//c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/366930983//**)",
+      "Read(//c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/366930983/darwin/10.12/lib//**)",
+      "Bash(cp -r /c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/366930983 /c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/winCodeSign-2.6.0)",
+      "Bash(mkdir -p /c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/winCodeSign-2.6.0/darwin/10.12/lib)",
+      "Bash(touch /c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/winCodeSign-2.6.0/darwin/10.12/lib/libcrypto.dylib /c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/winCodeSign-2.6.0/darwin/10.12/lib/libssl.dylib)",
+      "Read(//c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/**)",
+      "Read(//c/Users/a_bag/AppData/Local/electron-builder/Cache/winCodeSign/winCodeSign-2.6.0/**)"
+    ]
+  }
+}
